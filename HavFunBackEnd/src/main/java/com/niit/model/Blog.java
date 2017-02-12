@@ -19,6 +19,13 @@ public class Blog extends BaseDomain{
 	@Column
 	private String userid;
 	
+	public Blog(String id, String title, String description, String userid) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.userid = userid;
+	}
 	public String getId() {
 		return id;
 	}

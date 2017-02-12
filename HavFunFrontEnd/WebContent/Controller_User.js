@@ -130,11 +130,12 @@ app
 												});
 							};
 
-							self.logout = function() {
+							self.logout = function(userid) {
 								console.log("logout in controller_user............")
+								UserService.logout(userid)
 								$rootScope.currentUser = {};
 								$cookieStore.remove('currentUser');
-								UserService.logout()
+								
 								$location.path('/');
 
 							}

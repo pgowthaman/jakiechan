@@ -4,7 +4,7 @@ app.factory('UserService', ['$http', '$q','$rootScope', function($http, $q,$root
 	
 	console.log("UserService...")
 	
-	var BASE_URL='http://localhost:8080/HavFunBackEnd'
+	var BASE_URL='http://localhost:10082/HavFunBackEnd'
 		
     return {
          
@@ -67,7 +67,7 @@ app.factory('UserService', ['$http', '$q','$rootScope', function($http, $q,$root
               
             logout: function(){
             	console.log("logout in userService............")
-                return $http.get(BASE_URL+'/user/logout')
+                return $http.post(BASE_URL+'/user/logout/',userid)
                         .then(
                                 function(response){
                                     return response.data;

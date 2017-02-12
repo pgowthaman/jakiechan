@@ -133,6 +133,7 @@ public void setOnLine(String userid)
 @Transactional
 public void setOffLine(String userid)
 {
+	System.out.println("Setoffline is called...................");
 	String hql ="update Userdetails SET is_online='N' where userid= "+" '" +userid+ "'";
 	Query query =sessionFactory.getCurrentSession().createQuery(hql);
 	query.executeUpdate();

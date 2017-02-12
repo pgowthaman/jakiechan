@@ -6,8 +6,9 @@
 </head>
 <body>
 <div class="generic-container" ng-controller="UserController as ctrl">
-<form ng-submit="ctrl.logout()" name="myForm"
+<form ng-submit="ctrl.logout(userdetails.userid)" name="myForm"
 						class="form-horizontal">
+						
 <p>you are successfully logged out</p>
 <input type="submit" value="OK"
 									class="btn btn-primary btn-sm"></form>

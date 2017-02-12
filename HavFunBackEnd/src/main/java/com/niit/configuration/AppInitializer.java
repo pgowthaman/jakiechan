@@ -1,7 +1,5 @@
 package com.niit.configuration;
 
-import javax.servlet.Filter;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -30,9 +28,9 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 		return new String[] { "/" };
 	}
    
-	@Override
+	/*@Override
 	protected Filter[] getServletFilters(){
 		Filter [] singleton = { new CORSFilter() };
 		return singleton;
-	}
+	}*/
 }

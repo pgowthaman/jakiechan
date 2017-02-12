@@ -135,13 +135,16 @@ public class UserController {
 		return new ResponseEntity<Userdetails>(userdetails,HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/user/logout/",method=RequestMethod.POST)
-	public ResponseEntity<Userdetails> logout(HttpSession session)
+	@RequestMapping(value="/user/logout/{userid}",method=RequestMethod.POST)
+	public ResponseEntity<Userdetails> logout(HttpSession session,@PathVariable("userid") String userid)
 	{
 		System.out.println("Logout is called in user controller...................");
 		userdetails= userdetailsDAO.authenticate(userdetails.getUserid(), userdetails.getPassword());
-		friendDAO.setOffLine(userdetails.getUserid());
-		userdetailsDAO.setOffLine(userdetails.getUserid());
+		System.out.println("Authenticaticate is successs..........................");
+		//friendDAO.setOffLine(userdetails.getUserid());
+		System.out.println(userdetails.getUserid());
+		userdetailsDAO.setOffLine(userid);
+		System.out.println("Set offline is success...................");
 		session.invalidate();
 		return new ResponseEntity<Userdetails>(userdetails,HttpStatus.OK);
 	}
