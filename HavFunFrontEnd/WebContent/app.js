@@ -15,7 +15,14 @@ app.config(function($routeProvider) {
     templateUrl : 'pages/logout.html',
     controller  : 'UserController'
   })
- 
+  .when('/search_job', {
+    templateUrl : 'c_job/search_job.html',
+    controller  : 'JobController'
+  })
+ .when('/post_job', {
+    templateUrl : 'c_job/post_job.html',
+    controller  : 'JobController'
+  })
   .when('/list_blog', {
     templateUrl : 'c_blog/list_blog.html',
     controller  : 'BlogController'
@@ -28,6 +35,10 @@ app.config(function($routeProvider) {
   .when('/about', {
     templateUrl : 'pages/about.html',
     controller  : 'AboutController'
+  })
+   .when('/view_blog', {
+    templateUrl : 'c_blog/view_blog.html',
+    controller  : 'BlogController'
   })
   .when('/login', {
     templateUrl : 'pages/login.html',

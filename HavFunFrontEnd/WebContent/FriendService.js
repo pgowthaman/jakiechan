@@ -4,7 +4,7 @@ app.factory('FriendService', ['$http', '$q','$rootScope', function($http, $q,$ro
 	
 	console.log("FriendService...")
 	
-	var BASE_URL='http://localhost:10082/HavFunBackEnd/'
+	var BASE_URL='http://localhost:8020/HavFunBackEnd'
     return {
          
 		getMyFriends: function() {
@@ -60,6 +60,4 @@ app.factory('FriendService', ['$http', '$q','$rootScope', function($http, $q,$ro
          
     };
  
-}]);/**
- * 
- */
+}]);

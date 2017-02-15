@@ -4,7 +4,7 @@ app.factory('BlogService', ['$http', '$q','$rootScope', function($http, $q,$root
 	
 	console.log("BlogService...")
 	
-	var BASE_URL='http://localhost:10082/HavFunBackEnd'
+	var BASE_URL='http://localhost:8020/HavFunBackEnd'
 		
     return {
          

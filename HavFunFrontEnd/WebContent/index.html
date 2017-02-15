@@ -16,7 +16,7 @@
 <title>index</title>
 <style type="text/css">
 body { 
-  background: url("http://www.planwallpaper.com/static/images/744081-background-wallpaper.jpg") no-repeat center center fixed; 
+  background: url("http://www.pixelstalk.net/wp-content/uploads/2016/10/Images-Cyan-Desktop.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -25,52 +25,51 @@ body {
 </style>
 </head>
 <body>
-	<header>
+<header role="banner" style="margin-left:500px">
+  <img id="logo-main"  src="https://www.freelogoservices.com/api/main/images/1j+ojl1FOMkX9WypfBe43D6kjPWCqBNInxzJwXs1M3EMoAJtlCgqh...Zp8fU9" width="150" alt="Logo Thing main logo">
+</header>
 	<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		 <div class="navbar-header">
-      <a class="navbar-brand" href="#">HavFun</a>
-    </div>
     <ul class="nav navbar-nav">
       <li><a href="#/">Home</a></li>
       <li><a href="#">About Us</a></li>
        <li class="dropdown">
        <a class="dropdown-toggle" data-toggle="dropdown"  href="#/Blog">Friend<span class="caret"></span></a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" data-hover="dropdown">
         <li><a href="#/viewfriend">View Friend</a></li>
        <li><a href="#/search_friend">Search Friend</a>        </li>
       </ul>
     </li>
      <li class="dropdown">
        <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Blog<span class="caret"></span></a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" data-hover="dropdown">
         <li><a href="#/list_blog">List Blog</a></li>
        <li><a href="#/create_blog">Create Blog</a>        </li>
+       <li><a href="#/view_blog">view Blog</a>        </li>
       </ul>
     </li>
     <li class="dropdown">
        <a class="dropdown-toggle" data-toggle="dropdown"  href="#/Blog">Job<span class="caret"></span></a>
-      <ul class="dropdown-menu">
-        <li><a href="#">View Job</a></li>
-       <li><a href="#">Search Job</a>        </li>
+      <ul class="dropdown-menu" data-hover="dropdown">
+        <li><a href="#/post_job">post job</a></li>
+       <li><a href="#/search_job">Search Job</a>        </li>
       </ul>
     </li>
     <li class="dropdown">
        <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Chat<span class="caret"></span></a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" data-hover="dropdown">
         <li><a href="#/chat">Lets Chat</a></li>
       </ul>
     </li>
    </ul>
     <ul class="nav navbar-nav navbar-right">
     
-    <!--   <li 	ng-show="Ctrl.isLogin()"><a href="#/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-       <li  ng-hide="Ctrl.isLogin()"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+      <li><a href="#" ng-click="ctrl.logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        
     </ul> 
    
-  </div>
+
 </nav>
-</header>
+{{ctrl.userid}}
 <div ng-view></div>
 </body>
 <script src="app.js"></script>
