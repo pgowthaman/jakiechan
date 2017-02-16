@@ -29,7 +29,7 @@ public class FriendController {
 	
 	
 	private static final Logger log=LoggerFactory.getLogger(Friend.class);
-	@RequestMapping(value="/myfriends", method=RequestMethod.GET)
+	@RequestMapping(value="/myFriends", method=RequestMethod.GET)
 	public ResponseEntity<List<Friend>> listAllFriend(HttpSession session){
 		log.debug("-->Calling method to listAllFriends");
 		Userdetails loggedInUser = (Userdetails) session.getAttribute("loggedInUser");

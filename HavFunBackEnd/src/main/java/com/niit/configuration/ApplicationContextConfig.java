@@ -4,6 +4,7 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
 
 
@@ -27,10 +28,10 @@ import com.niit.model.Userdetails;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan("com.niit.collabackend")
+@ComponentScan("com.niit")
 @EnableTransactionManagement
 public class ApplicationContextConfig {
-	@Bean(name = "dataSource")
+	/*@Bean(name = "dataSource")
 	public DataSource getDataSource() {
 	    DriverManagerDataSource dataSource = new DriverManagerDataSource();
 	    dataSource.setDriverClassName("org.h2.Driver");
@@ -73,7 +74,7 @@ public class ApplicationContextConfig {
 	    return transactionManager;
 	}
 
-	/*@Bean(name = "dataSource")
+	@Bean(name = "dataSource")
 	public DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
@@ -125,6 +126,33 @@ public class ApplicationContextConfig {
 	}
 	
 	*/
+	@Bean
+	public SessionFactory sessionFactory() {
+		LocalSessionFactoryBuilder lsf=
+				new LocalSessionFactoryBuilder(getDataSource());
+		Properties hibernateProperties=new Properties();
+		hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
+		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
+		hibernateProperties.setProperty("hibernate.show_sql", "true");
+		lsf.addProperties(hibernateProperties);
+		Class classes[]={Job.class,Userdetails.class,Friend.class,Blog.class};
+		return lsf.addAnnotatedClasses(classes)
+
+		   .buildSessionFactory();
+	}
+	@Bean
+	public DataSource getDataSource() {
+	    BasicDataSource dataSource = new BasicDataSource();
+	    dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
+	    dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
+	    dataSource.setUsername("gowthaman");
+	    dataSource.setPassword("gowthaman");
+	    return dataSource;
+	}
+	@Bean
+	public HibernateTransactionManager hibTransManagement(){
+		return new HibernateTransactionManager(sessionFactory());
+	}
 
 }
 

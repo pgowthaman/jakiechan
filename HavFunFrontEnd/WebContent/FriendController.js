@@ -79,7 +79,7 @@ app.controller('FriendController', ['UserService','$scope', 'FriendService','$lo
           
           self.fetchAllUsers = function() {
 				UserService.fetchAllUsers().then(function(d) {
-					console.error('inside function, fetching Users');
+
 					self.users = d;
 				}, function(errResponse) {
 					console.error('Error while fetching Users');
