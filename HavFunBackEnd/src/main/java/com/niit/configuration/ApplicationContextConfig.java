@@ -145,8 +145,8 @@ public class ApplicationContextConfig {
 	    BasicDataSource dataSource = new BasicDataSource();
 	    dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
 	    dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
-	    dataSource.setUsername("gowthaman");
-	    dataSource.setPassword("gowthaman");
+	    dataSource.setUsername("project2");
+	    dataSource.setPassword("project2");
 	    return dataSource;
 	}
 	@Bean

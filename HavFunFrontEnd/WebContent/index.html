@@ -37,6 +37,7 @@ body {
       <ul class="dropdown-menu" data-hover="dropdown">
         <li><a href="#/viewfriend">View Friend</a></li>
        <li><a href="#/search_friend">Search Friend</a>        </li>
+       <li><a href="#" ng-click="FriendController.friendRequest()">view request</a>        </li>
       </ul>
     </li>
      <li class="dropdown">
@@ -72,14 +73,14 @@ body {
 {{ctrl.userid}}
 <div ng-view></div>
 </body>
-<script src="app.js"></script>
-<script src="Controller_User.js"></script>
-<script src="usercontroller.js"></script>
-<script src="UserService.js"></script>
+<script src="c_home/app.js"></script>
+<script src="c_user/UserController.js"></script>
+<script src="c_home/homecontroller.js"></script>
+<script src="c_user/UserService.js"></script>
 <script src="c_blog/BlogController.js"></script>
 <script src="c_blog/BlogService.js"></script>
-<script src="FriendController.js"></script>
+<script src="c_friend/FriendController.js"></script>
 <script src="c_chat/ChatService.js"></script>
 <script src="c_chat/ChatController.js"></script>
-<script src="FriendService.js"></script>
+<script src="c_friend/FriendService.js"></script>
 </html>
