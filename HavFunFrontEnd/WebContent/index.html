@@ -33,7 +33,7 @@ body {
       <li><a href="#/">Home</a></li>
       <li><a href="#">About Us</a></li>
        <li class="dropdown">
-       <a class="dropdown-toggle" data-toggle="dropdown"  href="#/Blog">Friend<span class="caret"></span></a>
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#/friend">Friend<span class="caret"></span></a>
       <ul class="dropdown-menu" data-hover="dropdown">
         <li><a href="#/viewfriend">View Friend</a></li>
        <li><a href="#/search_friend">Search Friend</a>        </li>
@@ -41,7 +41,7 @@ body {
       </ul>
     </li>
      <li class="dropdown">
-       <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Blog<span class="caret"></span></a>
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#/Blog">Blog<span class="caret"></span></a>
       <ul class="dropdown-menu" data-hover="dropdown">
         <li><a href="#/list_blog">List Blog</a></li>
        <li><a href="#/create_blog">Create Blog</a>        </li>
@@ -49,14 +49,14 @@ body {
       </ul>
     </li>
     <li class="dropdown">
-       <a class="dropdown-toggle" data-toggle="dropdown"  href="#/Blog">Job<span class="caret"></span></a>
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#/job">Job<span class="caret"></span></a>
       <ul class="dropdown-menu" data-hover="dropdown">
         <li><a href="#/post_job">post job</a></li>
        <li><a href="#/search_job">Search Job</a>        </li>
       </ul>
     </li>
     <li class="dropdown">
-       <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Chat<span class="caret"></span></a>
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#/Chat">Chat<span class="caret"></span></a>
       <ul class="dropdown-menu" data-hover="dropdown">
         <li><a href="#/chat">Lets Chat</a></li>
       </ul>
@@ -64,13 +64,12 @@ body {
    </ul>
     <ul class="nav navbar-nav navbar-right">
     
-      <li><a href="#" ng-click="ctrl.logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <li><a href="#" ng-click="ctrl.logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         
     </ul> 
    
 
 </nav>
-{{ctrl.userid}}
 <div ng-view></div>
 </body>
 <script src="c_home/app.js"></script>

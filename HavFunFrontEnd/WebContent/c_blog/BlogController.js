@@ -51,7 +51,9 @@ app
 												function(errResponse) {
 													console
 															.error('Error while creating Blog.');
-												});
+													$location.path('/list_blog');
+												}	
+										);
 							};
 							
 							

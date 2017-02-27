@@ -38,10 +38,11 @@ public class FriendController {
 		
 	}
 		
-	@RequestMapping(value="/addfriend/{friendid}", method=RequestMethod.GET)
+	@RequestMapping(value="/addfriend/{friendid}", method=RequestMethod.POST)
 	public ResponseEntity<Friend> sendFriendRequest(@PathVariable("friendid")String friendid,HttpSession session,Userdetails userdetails)
 	{
 		log.debug("-->Calling method send friend request");
+		
 		String loggedInUserid = (String) session.getAttribute("loggedInUserId");
 		friend.setUserid(loggedInUserid);
 		friend.setFriendid(friendid);

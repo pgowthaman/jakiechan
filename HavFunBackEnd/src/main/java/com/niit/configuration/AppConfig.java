@@ -33,18 +33,5 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		return viewResolver;
 	}
 	
-/*	@Bean(name = "multipartResolver")
-    public CommonsMultipartResolver multiPartResolver(){
-
-        CommonsMultipartResolver resolver = new CommonsMultipartResolver();
-        return resolver;
-    }*/
-	
-/*	@Override
-	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-		
-		configurer.enable();
-	}*/
-
 
 }
