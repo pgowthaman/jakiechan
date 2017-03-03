@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="myApp"  ng-controller="UserController as ctrl">
 <head>
-
-   <meta charset="utf-8">
+<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -15,14 +14,28 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.js"></script>
 <title>index</title>
 <style type="text/css">
-body { 
-  background: url("http://www.pixelstalk.net/wp-content/uploads/2016/10/Images-Cyan-Desktop.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+body {
+	background-image: url("http://www.no-zaku.com/background/wp-content/uploads/sites/9/2016/11/Nice-Background-Images-For-Business-Websites.jpg");
+	background-size:100%;
+	background-repeat:no-repeat;
 }
 </style>
+ <script>
+    $(document).ready(
+			function() {
+				$(".dropdown").hover(
+						function() {
+							$('.dropdown-menu', this).not('.in .dropdown-menu')
+									.stop(true, true).slideDown("400");
+							$(this).toggleClass('open');
+						},
+						function() {
+							$('.dropdown-menu', this).not('.in .dropdown-menu')
+									.stop(true, true).slideUp("400");
+							$(this).toggleClass('open');
+						});
+			});
+    </script>
 </head>
 <body>
 <header role="banner" style="margin-left:500px">
@@ -33,31 +46,31 @@ body {
       <li><a href="#/">Home</a></li>
       <li><a href="#">About Us</a></li>
        <li class="dropdown">
-       <a class="dropdown-toggle" data-toggle="dropdown"  href="#/friend">Friend<span class="caret"></span></a>
-      <ul class="dropdown-menu" data-hover="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Friend<span class="caret"></span></a>
+      <ul class="dropdown-menu" >
         <li><a href="#/viewfriend">View Friend</a></li>
        <li><a href="#/search_friend">Search Friend</a>        </li>
        <li><a href="#" ng-click="FriendController.friendRequest()">view request</a>        </li>
       </ul>
     </li>
      <li class="dropdown">
-       <a class="dropdown-toggle" data-toggle="dropdown"  href="#/Blog">Blog<span class="caret"></span></a>
-      <ul class="dropdown-menu" data-hover="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Blog<span class="caret"></span></a>
+      <ul class="dropdown-menu">
         <li><a href="#/list_blog">List Blog</a></li>
        <li><a href="#/create_blog">Create Blog</a>        </li>
        <li><a href="#/view_blog">view Blog</a>        </li>
       </ul>
     </li>
     <li class="dropdown">
-       <a class="dropdown-toggle" data-toggle="dropdown"  href="#/job">Job<span class="caret"></span></a>
-      <ul class="dropdown-menu" data-hover="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Job<span class="caret"></span></a>
+      <ul class="dropdown-menu" >
         <li><a href="#/post_job">post job</a></li>
        <li><a href="#/search_job">Search Job</a>        </li>
       </ul>
     </li>
     <li class="dropdown">
-       <a class="dropdown-toggle" data-toggle="dropdown"  href="#/Chat">Chat<span class="caret"></span></a>
-      <ul class="dropdown-menu" data-hover="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Chat<span class="caret"></span></a>
+      <ul class="dropdown-menu" >
         <li><a href="#/chat">Lets Chat</a></li>
       </ul>
     </li>
@@ -72,14 +85,14 @@ body {
 </nav>
 <div ng-view></div>
 </body>
-<script src="c_home/app.js"></script>
-<script src="c_user/UserController.js"></script>
-<script src="c_home/homecontroller.js"></script>
-<script src="c_user/UserService.js"></script>
-<script src="c_blog/BlogController.js"></script>
-<script src="c_blog/BlogService.js"></script>
-<script src="c_friend/FriendController.js"></script>
-<script src="c_chat/ChatService.js"></script>
-<script src="c_chat/ChatController.js"></script>
-<script src="c_friend/FriendService.js"></script>
+<script src="HavFun_home/app.js"></script>
+<script src="HavFun_user/UserController.js"></script>
+<script src="HavFun_home/homecontroller.js"></script>
+<script src="HavFun_user/UserService.js"></script>
+<script src="HavFun_blog/BlogController.js"></script>
+<script src="HavFun_blog/BlogService.js"></script>
+<script src="HavFun_friend/FriendController.js"></script>
+<script src="HavFun_chat/ChatService.js"></script>
+<script src="HavFun_chat/ChatController.js"></script>
+<script src="HavFun_friend/FriendService.js"></script>
 </html>

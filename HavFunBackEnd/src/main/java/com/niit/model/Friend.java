@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 public class Friend extends BaseDomain {
 
 	@Id
-	
 	private String id;
 	private String userid;
 	private String friendid;
