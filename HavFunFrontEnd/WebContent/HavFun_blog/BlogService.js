@@ -9,14 +9,14 @@ app.factory('BlogService', ['$http', '$q','$rootScope', function($http, $q,$root
     return {
          
             fetchAllBlogs: function() {
-            	console.log("calling fetchAllBlogs ")
+            	console.log("fetching all blogs in service ........ ")
                     return $http.get(BASE_URL+'/blogs')
                             .then(
                                     function(response){
                                         return response.data;
                                     }, 
                                     function(errResponse){
-                                        console.error('Error while fetching UserDetailss');
+                                        console.error('Error while fetching all bllogs in service.........');
                                         return $q.reject(errResponse);
                                     }
                             );
@@ -24,20 +24,20 @@ app.factory('BlogService', ['$http', '$q','$rootScope', function($http, $q,$root
             
              
             createBlog: function(Blog){
-            	console.log("calling create user")
+            	console.log("inside create blog in service ................")
                     return $http.post(BASE_URL+'/createblogs/', Blog)
                             .then(
                                     function(response){
                                         return response.data;
                                     }, 
                                     function(errResponse){
-                                        console.error('Error while creating user');
+                                        console.error('Error while creating blog in service.......');
                                         return $q.reject(errResponse);
                                     }
                             );
             },
             getSelectedBlog: function(id){
-            	console.log("calling get Selected blog ")
+            	console.log("calling get Selected blog service")
                     return $http.get(BASE_URL+'/blog/'+id)
                             .then(
                                     function(response){

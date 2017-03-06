@@ -30,7 +30,7 @@ app.controller('FriendController', ['UserService','$scope', 'FriendService','$lo
                  .then(
                               function(d) {
                                    self.Friend = d;
-                                  alert("Friend request sent")
+                                  alert("Friend request sent to" +friendid)
                               },
                                function(errResponse){
                                    console.error('Error while sending friend request');

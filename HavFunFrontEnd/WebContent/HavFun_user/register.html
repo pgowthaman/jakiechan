@@ -80,7 +80,7 @@
           <div class="col-md-4">
            <input type="email" ng-model="ctrl.Userdetails.email" id="email"
 										class="email form-control input-sm"
-										placeholder="Enter your Email" required />
+										placeholder="Enter your Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required />
           </div>
         </div>
 
@@ -90,7 +90,7 @@
           <div class="col-md-4">
           <input type="tel" ng-model="ctrl.Userdetails.contact" id="contact"
 										class="mobile form-control input-sm"
-										placeholder="Enter your contact number" required />
+										placeholder="Enter your contact number" pattern="[9|7|8][0-9]{9}" required />
     
           </div>
         </div>
@@ -113,12 +113,12 @@
           <label class="col-md-4 control-label" for="save"></label>
           <div class="col-md-8">
             <button id="save" type="submit" name="save" class="btn btn-success">Save</button>
-            <button  ng-click="ctrl.reset()" class="btn btn-warning btn-sm">reset</button>
+           
           </div>
         </div>
-
-      
-        </form>
+         </form>
+          Already registered login here
+           <a href="#/login"> <button   class="btn btn-primary">Login</button></a>
 </div>
 	
 </body>

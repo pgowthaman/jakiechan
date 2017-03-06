@@ -12,7 +12,7 @@ app
 						'$http',
 						function($scope, BlogService, $location, $rootScope,
 								$http) {
-							console.log("BlogController...")
+							console.log("inside BlogController...")
 							var self = this;
 							self.Blog = {
 								userid : '',
@@ -27,7 +27,7 @@ app
 							self.blogs = [];
 
 							self.fetchAllBlogs = function() {
-								console.log("fetchAllBlogs...")
+								console.log("fetching all blogs method in controller......")
 								BlogService
 										.fetchAllBlogs()
 										.then(
@@ -56,7 +56,7 @@ app
 							//self.fatchAllUsers();
 
 							self.createBlog = function(Blog) {
-								console.log("createUser...")
+								console.log("creating all blog method in controller......")
 								BlogService
 										.createBlog(Blog)
 										.then(
@@ -85,7 +85,7 @@ app
 							
 							self.submit = function() {
 								{
-									console.log('Saving New User', self.Blog);
+									console.log('submit blog method in controller..........', self.Blog);
 									self.createBlog(self.Blog);
 								}
 								self.reset();

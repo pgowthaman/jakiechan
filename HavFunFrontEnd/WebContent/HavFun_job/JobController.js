@@ -14,7 +14,7 @@ app
 						
 						function(JobService,UserService, $location, $rootScope) {
 						
-							console.log("jobController.....js")
+							console.log("inside jobController.....")
 							var self = this;
 							
 							self.job = {
@@ -35,17 +35,17 @@ app
 							/*APPLY FOR JOB*/
 							
 							function applyForJob(jobId){
-								console.log("*****applyForJob***in jobcontroller.js");
+								console.log("inside applyForJob method in jobcontroller");
 								var currentUser = $rootScope.currentUser
 								console.log("currentUser.id:"+currentUser.userid)
 								//if (current user) ->>>not null,not empty and defined
 								if(typeof currentUser.userid == 'undefined')
 									{
 									alert("please login to apply for job")
-									console.log("user is not logged in***in job controller.js**")
+									console.log("not logged in")
 									return
 									}
-								console.log("**userId::"+currentUser.jobId+"applying for job.."+jobId)
+								console.log("userId::"+currentUser.jobId+"applying for job.."+jobId)
 								JobService
 										.applyForJob(jobId)
 										.then(
@@ -54,7 +54,7 @@ app
 														alert(self.job.errorMessage)
 												},
 												function(errResponse){
-													console.log('error while applying for job request')
+													console.log('error while applying for job')
 												});
 														
 							}						
@@ -63,7 +63,7 @@ app
 							
 
 
-							/* get my applied jobS LIST........ .................................*/
+							/* get my applied jobS LIST*/
 							self.getMyAppliedJobs = function() {
 								JobService
 										.getMyAppliedJobs()
@@ -79,7 +79,7 @@ app
 							};
 							
 
-							/* CREATE job ....... ................................................*/
+							/* CREATE job */
 							self.rejectJobApplication = function(userId) {
 								var jobID=$rootScope.selectedJob.jobId;
 								JobService
@@ -87,19 +87,19 @@ app
 										.then(
 												function(d) {
 													self.jobs = d;
-													alert("u hv successfully rejected appli.. jobcontroller.js...."+userId+"..."+jobId)
+													alert("rejected the application"+userId+"..."+jobId)
 												},
 												
 												function(errResponse) {
 													console
-															.error('Error while rejectJobApplication job...in job controller,js...');
+															.error('Error while rejecting the  job application');
 												});
 								
 							};
 
 							self.callForInterview = function() {
 								var jobID=$rootScope.selectedJob.jobId;
-								console.log("callForInterview...")
+								console.log("call for the interview")
 								JobService
 										.callForInterview()
 										.then(
@@ -137,7 +137,7 @@ app
 							
 							self.getAllJobs = function() {
 								
-								console.log("getAllJobs......in job controller.js")
+								console.log("getAllJobs in job controller")
 								JobService
 										.getAllJobs()
 										.then(
@@ -210,7 +210,6 @@ app
 										errorCode : '',
 										errorMessage : '',
 								};
-								//$scope.myForm.$setPristine(); // reset Form
 							};
 
 						} ]);

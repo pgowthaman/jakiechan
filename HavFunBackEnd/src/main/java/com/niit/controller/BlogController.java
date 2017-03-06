@@ -30,7 +30,7 @@ private static final Logger log=LoggerFactory.getLogger(UserController.class);
 	
 	@RequestMapping(value="/blogs", method=RequestMethod.GET)
 	public ResponseEntity<List<Blog>> listAllBlog(){
-		log.debug("-->Calling method listAllUsers");
+		log.debug("Calling method listAll blogs");
 		List<Blog> blog=blogdao.list();
 		if(blog.isEmpty()){
 			return new ResponseEntity<List<Blog>>(HttpStatus.NO_CONTENT);
@@ -41,7 +41,7 @@ private static final Logger log=LoggerFactory.getLogger(UserController.class);
 	@RequestMapping(value="/blog/{id}",method=RequestMethod.GET)
 	public ResponseEntity<Blog> getuser(@PathVariable("id")String id)
 	{
-	log.debug("-->calling get method");
+	log.debug("calling get blog method");
     Blog blog=blogdao.get(id);
 	if(blog==null)
 	{
@@ -56,7 +56,7 @@ private static final Logger log=LoggerFactory.getLogger(UserController.class);
 	
 	@RequestMapping(value="/createblogs/", method=RequestMethod.POST)
 	public ResponseEntity<Blog> createblogs(@RequestBody Blog blog,HttpSession session){
-		log.debug("--> Calling the method createUsers");
+		log.debug(" Calling the method createUsers");
 		String loggedInUserid = (String) session.getAttribute("loggedInUserId");
 		blog.setUserid(loggedInUserid);
 	    blogdao.save(blog);
@@ -66,11 +66,11 @@ private static final Logger log=LoggerFactory.getLogger(UserController.class);
 	@RequestMapping(value="/blog/{id}",method=RequestMethod.DELETE)
 	public ResponseEntity<Blog> deleteuser(@PathVariable("id")String id)
 	{
-		log.debug("--> calling the delete method");
+		log.debug(" calling the delete blog method");
 		Blog blog=blogdao.get(id);
 		if(blog==null)
 		{
-			log.debug("-->User does not exist");
+			log.debug("Blog does not exist");
 			blog = new Blog();
 			blog.setErrorcode("404");
 			blog.setErrormessage("Blog not found");

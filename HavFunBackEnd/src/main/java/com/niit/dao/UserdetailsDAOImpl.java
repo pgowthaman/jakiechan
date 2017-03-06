@@ -30,8 +30,7 @@ public class UserdetailsDAOImpl implements UserdetailsDAO {
 	public boolean save(Userdetails userdetails)
 	{
 	try {
-		// Session session = sessionFactory.getCurrentSession();
-	
+		
 		sessionFactory.getCurrentSession().save(userdetails);
 		return true;
 	}
